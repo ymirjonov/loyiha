@@ -6,9 +6,9 @@ session_start();
 
 <!-- HTML code for Bootstrap framework and form design -->
 <?php
-  define('Myheader', TRUE);
-  require('ruyhat.php');
-  echo"<br /> Hello world<br />";
+  // define('Myheader', TRUE);
+  // require('ruyhat.php');
+  // echo"<br /> Hello world<br />";
 
  ?>
 <!DOCTYPE html>
@@ -53,7 +53,7 @@ session_start();
                 /* Success: Set session variables and redirect to protected page */
                 $_SESSION['Username'] = $Username;
 
-                $_SESSION['Active'] = true;
+                $_SESSION['id'] = true;
                 header('location:ruyhat.php');
                 exit;
 

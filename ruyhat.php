@@ -6,10 +6,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-
-
- ?> -->
  <?php
  ob_start();
  session_start();
@@ -19,7 +15,7 @@
  }
 else{
   ob_start();
-  //header('location: login.php');
+  header('location: login.php');
   ob_end_clean();
 }
   ?>
@@ -45,7 +41,16 @@ else{
       $states = $mysqli->query("SELECT * FROM state") or die($mysqli->error);
 
       ?>
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="logout.php" class="btn btn-link btn-danger pull-right">Logout</a>
+        </div>
+
+      </div>
       <div class="row justify-content-md-center">
+        <div class="col-xs-12">
+
+
           <table class="table">
             <thead>
               <tr>
@@ -75,8 +80,11 @@ else{
 
           </table>
 
-
+        </div>
     <div class="row justify-content-centre">
+      <div class="col-xs-12">
+
+
     <form  action="process.php" method="POST">
       <input type="hidden" name="id" value="<?php echo $id; ?>">
       <div class="form-group">
@@ -84,6 +92,7 @@ else{
       <input type="text" name="name" class="form-control"
       value="<?php echo $name; ?>" placeholder="Enter your name">
         </div>
+
         <div class="form-group">
 
       </label>
@@ -138,6 +147,7 @@ else{
       <?php endif; ?>
         </div>
       </form>
+        </div>
     </div>
   </div>
   </body>
